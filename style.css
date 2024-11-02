@@ -1,0 +1,11 @@
+body {
+}
+
+input {
+    font-size: 200%;
+}
+
+div#output {
+    font-size: 200%;
+    color: gray;
+}
