@@ -21,10 +21,15 @@ function createSVGObjectIfKanji(c) {
     return kanjiObject;
 }
 
-function handler(event) {
-    charArr = event.target.value.split('');
+function updateOutput(s) {
+    charArr = s.split('');
     kanjiArr = charArr.map(createSVGObjectIfKanji);
     outputDiv.replaceChildren(...kanjiArr);
 }
 
-inputText.addEventListener('input', handler);
+function inputHandler(event) {
+    updateOutput(event.target.value);
+}
+
+updateOutput(inputText.value)
+inputText.addEventListener('input', inputHandler);
